@@ -1,0 +1,176 @@
+.book-not-found {
+  min-height: 50vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 16px; text-align: center; padding: 40px;
+}
+
+.book-page { padding: 28px 0 80px; }
+.book-back  { margin-bottom: 24px; }
+
+.book-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 36px;
+  align-items: start;
+}
+
+.book-form-header { margin-bottom: 24px; }
+.book-form-title  { font-size: clamp(24px, 3vw, 32px); color: var(--navy); margin-top: 6px; }
+.book-form-sub    { color: var(--text-secondary); font-size: 15px; margin-top: 8px; }
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 28px;
+}
+
+.book-fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.book-legend {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid var(--border);
+  width: 100%;
+  margin-bottom: 4px;
+}
+.book-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-input--error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+}
+.form-error {
+  font-size: 12px;
+  color: #dc2626;
+  margin-top: 2px;
+  display: block;
+}
+.book-textarea { resize: vertical; min-height: 100px; }
+
+.book-submit { width: 100%; justify-content: center; }
+.book-spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Summary */
+.book-summary {
+  position: sticky;
+  top: calc(var(--nav-height) + 20px);
+}
+.book-summary-card { overflow: hidden; }
+.book-summary-card__head {
+  background: var(--navy);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.book-summary-card__head h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: white;
+  line-height: 1.3;
+}
+.book-summary-info {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.book-summary-info li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+.book-summary-info li svg { color: var(--saffron); flex-shrink: 0; }
+.book-summary-seats {
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.book-summary-seats span {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--teal);
+}
+.book-summary-bar {
+  height: 6px;
+  background: var(--gray-100);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.book-summary-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal-light), var(--saffron));
+  border-radius: 100px;
+}
+.book-summary-note {
+  padding: 14px 20px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: var(--saffron-pale);
+  border-top: 1px solid rgba(244,128,26,0.12);
+}
+
+/* Success */
+.book-success {
+  min-height: 65vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 18px; text-align: center;
+  padding: 60px 24px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.book-success__icon { color: #059669; }
+.book-success h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--navy);
+}
+.book-success p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.book-success__actions {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  justify-content: center; margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .book-layout { grid-template-columns: 1fr; }
+  .book-summary { position: static; }
+}
+@media (max-width: 520px) {
+  .book-row { grid-template-columns: 1fr; }
+  .book-form { padding: 20px; }
+}
